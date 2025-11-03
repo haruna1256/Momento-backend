@@ -14,9 +14,10 @@ func main() {
     router := gin.Default()
 
     // エンドポイント設定
-    router.GET("/photos", handlers.GetPhotos)
-    router.POST("/photos", handlers.CreatePhoto)
+    router.GET("/photos", handlers.GetPhotos)      // 写真一覧取得
+    router.POST("/photos", handlers.CreatePhoto)   // 写真情報を登録（URLなど）
+    router.POST("/upload", handlers.UploadPhoto)   // 実際の画像ファイルをアップロード
 
     // サーバー起動
-    router.Run(":8080") // ここでサーバーを起動
+    router.Run(":4000") // ここでサーバーを起動
 }
